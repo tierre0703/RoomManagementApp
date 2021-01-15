@@ -14,8 +14,8 @@ class EmailFactory {
     var Cache:[Int64:String] = [:]
     
     func Init() {
-        var con = DBManager.getCon()
-        var stmt = DBManager.procGetEmailList()
+        _ = DBManager.getCon()
+        let stmt = DBManager.procGetEmailList()
         if stmt == nil {
             return;
         }

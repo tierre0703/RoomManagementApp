@@ -26,11 +26,12 @@ class EmailSettings
     func load()
     {
         let defaults = UserDefaults.standard
-        SMTP_HOST = defaults.object(forKey: "SMTP_PORT") as? String ?? "";
+        SMTP_HOST = defaults.object(forKey: "SMTP_HOST") as? String ?? "";
         PORT = defaults.integer(forKey: "PORT") ;
         USERNAME = defaults.object(forKey: "USERNAME") as? String ?? "";
         PASSWORD = defaults.object(forKey: "PASSWORD") as? String ?? "";
         FROM_ADDRESS = defaults.object(forKey: "FROM_ADDRESS") as? String ?? "";
+        DISPLAY_NAME = defaults.object(forKey: "DISPLAY_NAME") as? String ?? "";
         
         TO_LIST = defaults.object(forKey: "TO_LIST") as? [String] ?? [String]()
     }
@@ -43,6 +44,7 @@ class EmailSettings
         defaults.set(USERNAME, forKey: "USERNAME");
         defaults.set(PASSWORD, forKey: "PASSWORD");
         defaults.set(FROM_ADDRESS, forKey: "FROM_ADDRESS");
+        defaults.set(DISPLAY_NAME, forKey: "DISPLAY_NAME");
         defaults.set(TO_LIST, forKey: "TO_LIST");
     }
 }
