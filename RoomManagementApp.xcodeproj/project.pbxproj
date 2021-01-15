@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		931469E925AEF356004E9952 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = 931469E825AEF356004E9952 /* SwiftSMTP */; };
+		931469EB25AEF377004E9952 /* EmailNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469EA25AEF377004E9952 /* EmailNotification.swift */; };
+		931469ED25AEF8E5004E9952 /* EmailConfigurationUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469EC25AEF8E5004E9952 /* EmailConfigurationUC.swift */; };
+		931469EF25AF0398004E9952 /* EmailSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469EE25AF0398004E9952 /* EmailSettings.swift */; };
+		931469F125AF22C1004E9952 /* EmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469F025AF22C0004E9952 /* EmailService.swift */; };
+		931469F325AF235A004E9952 /* EmailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469F225AF235A004E9952 /* EmailFactory.swift */; };
+		931469F525AF2D4F004E9952 /* EmailReportSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469F425AF2D4F004E9952 /* EmailReportSchedule.swift */; };
 		936301EC25A535A00063C6AB /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936301EB25A535A00063C6AB /* DBManager.swift */; };
 		9363020F25A53D020063C6AB /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936301FD25A53CD60063C6AB /* SQLite.framework */; };
 		9363021025A53D020063C6AB /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 936301FD25A53CD60063C6AB /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -15,6 +22,16 @@
 		9368768625AC2AF8002E77ED /* RoomMgntUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368768525AC2AF8002E77ED /* RoomMgntUC.swift */; };
 		9368768F25AC87DA002E77ED /* CallMgntUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368768E25AC87DA002E77ED /* CallMgntUC.swift */; };
 		9368769125AD591A002E77ED /* EmailMgntUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769025AD5919002E77ED /* EmailMgntUC.swift */; };
+		9368769325AD6E1E002E77ED /* MobileAppStatusFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769225AD6E1E002E77ED /* MobileAppStatusFactory.swift */; };
+		9368769525AD6EA7002E77ED /* MobileAppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769425AD6EA7002E77ED /* MobileAppStatus.swift */; };
+		9368769725AD7301002E77ED /* MobileAppStatusUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769625AD7301002E77ED /* MobileAppStatusUC.swift */; };
+		9368769925AD80F1002E77ED /* RepeaterStatusUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769825AD80F1002E77ED /* RepeaterStatusUC.swift */; };
+		9368769B25AD8E4F002E77ED /* RepeaterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769A25AD8E4F002E77ED /* RepeaterStatus.swift */; };
+		9368769D25AD8F2A002E77ED /* RepeaterStatusFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769C25AD8F2A002E77ED /* RepeaterStatusFactory.swift */; };
+		936876A225AD969D002E77ED /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936876A125AD969D002E77ED /* ServerManager.swift */; };
+		936876B625AD9987002E77ED /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936876AD25AD994A002E77ED /* SwiftSocket.framework */; };
+		936876B725AD9987002E77ED /* SwiftSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 936876AD25AD994A002E77ED /* SwiftSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		936876BF25AE971D002E77ED /* RepeaterTCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936876BE25AE971D002E77ED /* RepeaterTCPServer.swift */; };
 		937EE3882594E19F00EFB66B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937EE3872594E19F00EFB66B /* AppDelegate.swift */; };
 		937EE38A2594E19F00EFB66B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937EE3892594E19F00EFB66B /* ViewController.swift */; };
 		937EE38D2594E19F00EFB66B /* RoomManagementApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 937EE38B2594E19F00EFB66B /* RoomManagementApp.xcdatamodeld */; };
@@ -72,6 +89,34 @@
 			remoteGlobalIDString = A121AC451CA35C79005A31D1;
 			remoteInfo = "SQLite watchOS";
 		};
+		936876AA25AD994A002E77ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 936876A325AD994A002E77ED /* SwiftSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 377DAA691DCDE40200009697;
+			remoteInfo = "SwiftSocket iOS";
+		};
+		936876AC25AD994A002E77ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 936876A325AD994A002E77ED /* SwiftSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 377DAA761DCDE45D00009697;
+			remoteInfo = "SwiftSocket macOS";
+		};
+		936876AE25AD994A002E77ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 936876A325AD994A002E77ED /* SwiftSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37454ECA1E06158200800AE5;
+			remoteInfo = "SwiftSocket tvOS";
+		};
+		936876B025AD994A002E77ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 936876A325AD994A002E77ED /* SwiftSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 375C482D1DDC4C56008C701D;
+			remoteInfo = "iOS Example";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +127,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9363021025A53D020063C6AB /* SQLite.framework in Embed Frameworks */,
+				936876B725AD9987002E77ED /* SwiftSocket.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +135,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		931469DC25AEF219004E9952 /* Swift-SMTP-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Swift-SMTP-master"; path = "../packages/Swift-SMTP-master"; sourceTree = "<group>"; };
+		931469EA25AEF377004E9952 /* EmailNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailNotification.swift; sourceTree = "<group>"; };
+		931469EC25AEF8E5004E9952 /* EmailConfigurationUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailConfigurationUC.swift; sourceTree = "<group>"; };
+		931469EE25AF0398004E9952 /* EmailSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSettings.swift; sourceTree = "<group>"; };
+		931469F025AF22C0004E9952 /* EmailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailService.swift; sourceTree = "<group>"; };
+		931469F225AF235A004E9952 /* EmailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFactory.swift; sourceTree = "<group>"; };
+		931469F425AF2D4F004E9952 /* EmailReportSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailReportSchedule.swift; sourceTree = "<group>"; };
 		936301EB25A535A00063C6AB /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		936301EE25A53CD50063C6AB /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../packages/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		9363021225A54C060063C6AB /* EmployeeMgntUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeMgntUC.swift; sourceTree = "<group>"; };
@@ -96,6 +149,15 @@
 		9368768525AC2AF8002E77ED /* RoomMgntUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomMgntUC.swift; sourceTree = "<group>"; };
 		9368768E25AC87DA002E77ED /* CallMgntUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallMgntUC.swift; sourceTree = "<group>"; };
 		9368769025AD5919002E77ED /* EmailMgntUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailMgntUC.swift; sourceTree = "<group>"; };
+		9368769225AD6E1E002E77ED /* MobileAppStatusFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAppStatusFactory.swift; sourceTree = "<group>"; };
+		9368769425AD6EA7002E77ED /* MobileAppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAppStatus.swift; sourceTree = "<group>"; };
+		9368769625AD7301002E77ED /* MobileAppStatusUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileAppStatusUC.swift; sourceTree = "<group>"; };
+		9368769825AD80F1002E77ED /* RepeaterStatusUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterStatusUC.swift; sourceTree = "<group>"; };
+		9368769A25AD8E4F002E77ED /* RepeaterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterStatus.swift; sourceTree = "<group>"; };
+		9368769C25AD8F2A002E77ED /* RepeaterStatusFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterStatusFactory.swift; sourceTree = "<group>"; };
+		936876A125AD969D002E77ED /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		936876A325AD994A002E77ED /* SwiftSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSocket.xcodeproj; path = "../packages/SwiftSocket-master/SwiftSocket.xcodeproj"; sourceTree = "<group>"; };
+		936876BE25AE971D002E77ED /* RepeaterTCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterTCPServer.swift; sourceTree = "<group>"; };
 		937EE3842594E19F00EFB66B /* RoomManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937EE3872594E19F00EFB66B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		937EE3892594E19F00EFB66B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9363020F25A53D020063C6AB /* SQLite.framework in Frameworks */,
+				936876B625AD9987002E77ED /* SwiftSocket.framework in Frameworks */,
+				931469E925AEF356004E9952 /* SwiftSMTP in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,13 +199,26 @@
 		9363020E25A53D020063C6AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				931469DC25AEF219004E9952 /* Swift-SMTP-master */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		936876A425AD994A002E77ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				936876AB25AD994A002E77ED /* SwiftSocket.framework */,
+				936876AD25AD994A002E77ED /* SwiftSocket.framework */,
+				936876AF25AD994A002E77ED /* SwiftSocket.framework */,
+				936876B125AD994A002E77ED /* iOS Example.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		937EE37B2594E19F00EFB66B = {
 			isa = PBXGroup;
 			children = (
+				936876A325AD994A002E77ED /* SwiftSocket.xcodeproj */,
 				936301EE25A53CD50063C6AB /* SQLite.xcodeproj */,
 				937EE3862594E19F00EFB66B /* RoomManagementApp */,
 				937EE3852594E19F00EFB66B /* Products */,
@@ -173,6 +250,20 @@
 				9368768525AC2AF8002E77ED /* RoomMgntUC.swift */,
 				9368768E25AC87DA002E77ED /* CallMgntUC.swift */,
 				9368769025AD5919002E77ED /* EmailMgntUC.swift */,
+				9368769225AD6E1E002E77ED /* MobileAppStatusFactory.swift */,
+				9368769425AD6EA7002E77ED /* MobileAppStatus.swift */,
+				9368769625AD7301002E77ED /* MobileAppStatusUC.swift */,
+				9368769825AD80F1002E77ED /* RepeaterStatusUC.swift */,
+				9368769A25AD8E4F002E77ED /* RepeaterStatus.swift */,
+				9368769C25AD8F2A002E77ED /* RepeaterStatusFactory.swift */,
+				936876A125AD969D002E77ED /* ServerManager.swift */,
+				936876BE25AE971D002E77ED /* RepeaterTCPServer.swift */,
+				931469EA25AEF377004E9952 /* EmailNotification.swift */,
+				931469EC25AEF8E5004E9952 /* EmailConfigurationUC.swift */,
+				931469EE25AF0398004E9952 /* EmailSettings.swift */,
+				931469F025AF22C0004E9952 /* EmailService.swift */,
+				931469F225AF235A004E9952 /* EmailFactory.swift */,
+				931469F425AF2D4F004E9952 /* EmailReportSchedule.swift */,
 			);
 			path = RoomManagementApp;
 			sourceTree = "<group>";
@@ -194,6 +285,9 @@
 			dependencies = (
 			);
 			name = RoomManagementApp;
+			packageProductDependencies = (
+				931469E825AEF356004E9952 /* SwiftSMTP */,
+			);
 			productName = RoomManagementApp;
 			productReference = 937EE3842594E19F00EFB66B /* RoomManagementApp.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +321,10 @@
 				{
 					ProductGroup = 936301EF25A53CD50063C6AB /* Products */;
 					ProjectRef = 936301EE25A53CD50063C6AB /* SQLite.xcodeproj */;
+				},
+				{
+					ProductGroup = 936876A425AD994A002E77ED /* Products */;
+					ProjectRef = 936876A325AD994A002E77ED /* SwiftSocket.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -286,6 +384,34 @@
 			remoteRef = 9363020425A53CD60063C6AB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		936876AB25AD994A002E77ED /* SwiftSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftSocket.framework;
+			remoteRef = 936876AA25AD994A002E77ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		936876AD25AD994A002E77ED /* SwiftSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftSocket.framework;
+			remoteRef = 936876AC25AD994A002E77ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		936876AF25AD994A002E77ED /* SwiftSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftSocket.framework;
+			remoteRef = 936876AE25AD994A002E77ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		936876B125AD994A002E77ED /* iOS Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "iOS Example.app";
+			remoteRef = 936876B025AD994A002E77ED /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -305,10 +431,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936876A225AD969D002E77ED /* ServerManager.swift in Sources */,
+				9368769325AD6E1E002E77ED /* MobileAppStatusFactory.swift in Sources */,
 				9363021325A54C060063C6AB /* EmployeeMgntUC.swift in Sources */,
+				931469ED25AEF8E5004E9952 /* EmailConfigurationUC.swift in Sources */,
+				931469EB25AEF377004E9952 /* EmailNotification.swift in Sources */,
+				931469F325AF235A004E9952 /* EmailFactory.swift in Sources */,
 				9363021525A5506B0063C6AB /* Employee.swift in Sources */,
+				9368769725AD7301002E77ED /* MobileAppStatusUC.swift in Sources */,
+				9368769D25AD8F2A002E77ED /* RepeaterStatusFactory.swift in Sources */,
+				9368769925AD80F1002E77ED /* RepeaterStatusUC.swift in Sources */,
 				937EE38A2594E19F00EFB66B /* ViewController.swift in Sources */,
+				931469F525AF2D4F004E9952 /* EmailReportSchedule.swift in Sources */,
+				936876BF25AE971D002E77ED /* RepeaterTCPServer.swift in Sources */,
+				931469EF25AF0398004E9952 /* EmailSettings.swift in Sources */,
+				931469F125AF22C1004E9952 /* EmailService.swift in Sources */,
 				9368768625AC2AF8002E77ED /* RoomMgntUC.swift in Sources */,
+				9368769B25AD8E4F002E77ED /* RepeaterStatus.swift in Sources */,
+				9368769525AD6EA7002E77ED /* MobileAppStatus.swift in Sources */,
 				937EE3882594E19F00EFB66B /* AppDelegate.swift in Sources */,
 				9368768F25AC87DA002E77ED /* CallMgntUC.swift in Sources */,
 				9368769125AD591A002E77ED /* EmailMgntUC.swift in Sources */,
@@ -510,6 +650,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		931469E825AEF356004E9952 /* SwiftSMTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftSMTP;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		937EE38B2594E19F00EFB66B /* RoomManagementApp.xcdatamodeld */ = {
