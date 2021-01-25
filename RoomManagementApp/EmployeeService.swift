@@ -16,13 +16,13 @@ class EmployeeService {
     func Initialize() {
         var dao = EmployeeData.Instance;
         var list = dao.GetAllEmployees()
-        print("\n-----------------------------------------------")
-        print("\nInitializing Employees");
+        Logger.Instance.AddLog(msg: "\n-----------------------------------------------")
+        Logger.Instance.AddLog(msg: "\nInitializing Employees");
         for item in list! {
-            print("\n" + item.Name);
+            Logger.Instance.AddLog(msg: "\n" + item.Name);
             EmployeeFactory.Instance.TryAdd(Id: item.Id!, employee: item)
         }
-        print("\n-----------------------------------------------")
+        Logger.Instance.AddLog(msg: "\n-----------------------------------------------")
     }
     
     func CheckEmployeeAuth(username:String, password:String)->EmployeeStruct? {

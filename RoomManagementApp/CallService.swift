@@ -26,17 +26,17 @@ class CallService {
         var fromDateStr = dateFormatter.string(from: fromDate)
         var toDateStr = dateFormatter.string(from: toDate)
         var calls = CallData.Instance.GetRecentUnacceptedCalls(fromDate: fromDateStr, toDate: toDateStr);
-        print("\n--------------------------------------");
-        print("\nNo of Unaccepted Calls - Last 10 Minutes - " + String(calls?.count ?? 0));
+        Logger.Instance.AddLog(msg: "\n--------------------------------------");
+        Logger.Instance.AddLog(msg: "\nNo of Unaccepted Calls - Last 10 Minutes - " + String(calls?.count ?? 0));
         for call in calls! {
             CallFactory.Instance.Add(id: call.UniqueId!, call: call)
             let timeStamp = call.TimeStamp ?? "";
             let roomId = call.Room?.UniqueId ?? "";
             let uniqueId = call.UniqueId ?? "";
             let outputStr = "\n" + timeStamp + " " + roomId + " " + uniqueId;
-            print(outputStr);
+            Logger.Instance.AddLog(msg: outputStr);
         }
-        print("\n--------------------------------------");
+        Logger.Instance.AddLog(msg: "\n--------------------------------------");
     }
     
     func StartUnacceptedCallCheck() {
@@ -57,7 +57,7 @@ class CallService {
             
             var sentDate = Date.fromDatatypeValue(item.value.TimeStamp)
             if(item.value.Accepted && now.distance(to: sentDate) >= 30.0 ) {
-                print("RECALL :: " + (item.value.Room!.Number ?? "") + " " + (item.value.UniqueId ?? ""));
+                Logger.Instance.AddLog(msg: "RECALL :: " + (item.value.Room!.Number ?? "") + " " + (item.value.UniqueId ?? ""));
                 Recall(call: item.value);
             }
         }
@@ -76,7 +76,7 @@ class CallService {
     }
     
     func ReceiveNewCall(call: CallStruct) {
-        print("\nReceiveNewCall");
+        Logger.Instance.AddLog(msg: "\nReceiveNewCall");
         let callUniqueId = call.UniqueId ?? ""
         let callRoomNumber = call.Room?.Number ?? ""
         CallFactory.Instance.Add(id: callUniqueId, call: call);

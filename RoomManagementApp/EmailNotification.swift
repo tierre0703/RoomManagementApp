@@ -37,6 +37,7 @@ class EmailNotification {
         
         client.send(mail, completion: { (failed) in
             print("\n Mail Sent Error", failed.debugDescription);
+            Logger.Instance.AddLog(msg: ("\n Mail Sent Error" +  failed.debugDescription))
         })
      
 

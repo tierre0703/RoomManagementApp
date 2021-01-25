@@ -25,15 +25,15 @@ class ExternalClientTCPServer: SwiftAsyncSocketDelegate  {
     }
     
     func Initialize() {
-        print("\n-----------------------------------------------");
-        print("\nInititializing External Client TCP Server on Port 8888");
+        Logger.Instance.AddLog(msg: "\n-----------------------------------------------");
+        Logger.Instance.AddLog(msg: "\nInititializing External Client TCP Server on Port 8888");
         server?.disconnect()
         do {
             try server?.accept(port: port)
         } catch {
-            print("\nMobileTCPServer->Initialize() error", error);
+            Logger.Instance.AddLog(msg: "\nMobileTCPServer->Initialize() error", error: error);
         }
-        print("\n-----------------------------------------------")
+        Logger.Instance.AddLog(msg: "\n-----------------------------------------------")
     }
     
     func StopAll() {
@@ -44,7 +44,7 @@ class ExternalClientTCPServer: SwiftAsyncSocketDelegate  {
     
     
     func socket(_ socket: SwiftAsyncSocket, didAccept newSocket: SwiftAsyncSocket) {
-        print("\nExternal Client Connected");
+        Logger.Instance.AddLog(msg: "\nExternal Client Connected");
         let key = socket.localAddress as? String ?? ""
         if(Connections.keys.contains(key)) {
             Connections.removeValue(forKey: key)
@@ -61,7 +61,7 @@ class ExternalClientTCPServer: SwiftAsyncSocketDelegate  {
         let dataStr = data as? String ?? "";
         
         if(dataStr.count > 0) {
-            print("\nEXTERNAL :: RECEIVED :: " + dataStr);
+            Logger.Instance.AddLog(msg: "\nEXTERNAL :: RECEIVED :: " + dataStr);
             let callToken = "CALL:";
             var roomNo = "";
             

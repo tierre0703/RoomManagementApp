@@ -133,6 +133,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         // Save changes in the application's managed object context before the application terminates.
+        
+        
+        
+        let question = NSLocalizedString("Terminating this app will stop RoomManagement Service. Quit anyway?", comment: "Quit and stop all Services")
+        let info = NSLocalizedString("Quitting now will stop RoomManagement Service", comment: "Quit and stop all Services");
+        let quitButton = NSLocalizedString("Quit", comment: "Quit anyway button title")
+        let cancelButton = NSLocalizedString("Cancel", comment: "Cancel button title")
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = info
+        alert.addButton(withTitle: quitButton)
+        alert.addButton(withTitle: cancelButton)
+        
+        let answer = alert.runModal()
+        if answer == .alertSecondButtonReturn {
+            return .terminateCancel
+        }
+        
+        
+        
         let context = persistentContainer.viewContext
         
         if !context.commitEditing() {

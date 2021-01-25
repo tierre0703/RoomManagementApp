@@ -18,6 +18,9 @@ class EmailConfigurationUC: NSViewController {
     @IBOutlet weak var txt_display_name: NSTextField!
     @IBOutlet weak var txt_from_addr: NSTextField!
     @IBOutlet var txt_to_addr: NSTextView!
+    @IBOutlet var txtLog: NSTextView!
+    
+    var timer:Timer?;
     
     //MARK ACTION
     @IBAction func onClickApply(_ sender: Any) {
@@ -26,6 +29,13 @@ class EmailConfigurationUC: NSViewController {
     
     override func viewDidLoad() {
         loadData();
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(refreshLog), userInfo: nil, repeats: true)
+    }
+    
+    @objc func refreshLog(){
+        let msg = Logger.Instance.getMsg();
+        txtLog.string = msg;
     }
     
     func saveData(){

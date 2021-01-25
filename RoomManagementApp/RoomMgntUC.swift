@@ -42,7 +42,7 @@ class RoomMgntUC: NSViewController{
                 break
                 
             default:
-                print("alert button handler none")
+                Logger.Instance.AddLog(msg: "alert button handler none")
             }
 
         }
@@ -126,7 +126,7 @@ class RoomMgntUC: NSViewController{
             }
         }
         catch{
-            print("\n RoomMgntUC->loadData() error", error);
+            Logger.Instance.AddLog(msg: "\n RoomMgntUC->loadData() error", error: error);
         }
         
     }

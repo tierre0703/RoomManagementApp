@@ -69,7 +69,7 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
             }
             
             if(connected == false) {
-                print("\nMObile :: " + (emp?.Name ?? "") + " Off-line");
+                Logger.Instance.AddLog(msg: "\nMObile :: " + (emp?.Name ?? "") + " Off-line");
                 Connections.removeValue(forKey: item.key)
                 if(emp != nil) {
                     var timespanStr = "00:00:00:00";
@@ -140,23 +140,23 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
     }
     
     func Initialize() {
-        print("\n---------------------------------");
-        print("\nInitializing Mobile TCP Server on Port 7777");
+        Logger.Instance.AddLog(msg: "\n---------------------------------");
+        Logger.Instance.AddLog(msg: "\nInitializing Mobile TCP Server on Port 7777");
         
         server?.disconnect()
         do {
             try server?.accept(port: port)
         } catch {
-            print("\nMobileTCPServer->Initialize() error", error);
+            Logger.Instance.AddLog(msg: "\nMobileTCPServer->Initialize() error", error: error);
         }
         
-        print("\n---------------------------------");
+        Logger.Instance.AddLog(msg: "\n---------------------------------");
     }
     
     
     
     func socket(_ socket: SwiftAsyncSocket, didAccept newSocket: SwiftAsyncSocket) {
-        print("\nMobile :: No Of Connections : " + String(Connections.count) );
+        Logger.Instance.AddLog(msg: "\nMobile :: No Of Connections : " + String(Connections.count) );
     }
     
     func socket(_ socket: SwiftAsyncSocket, didWriteDataWith tag: Int) {
@@ -166,7 +166,7 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
         
         let dataStr = data as? String ?? "";
         
-        print("/nMobileTCPServer RECEIVED ::" + dataStr);
+        Logger.Instance.AddLog(msg: "/nMobileTCPServer RECEIVED ::" + dataStr);
         
         if(dataStr.count > 0) {
             let connectionToken = "BBCB_NC"
@@ -186,7 +186,7 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
                 let index: Int = dataStr.distance(from: dataStr.startIndex, to: range.lowerBound);
                 
                 if(index >= 0) {
-                    print("\nNew Authentication Request");
+                    Logger.Instance.AddLog(msg: "\nNew Authentication Request");
                     var dataIndex = dataStr.index(dataStr.startIndex, offsetBy: (index + authToken.count));
                     let repeaterRange = dataIndex..<dataStr.endIndex;
                     let sub: String = dataStr[repeaterRange] as? String ?? "";
@@ -210,12 +210,12 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
                     
                     if (username != "" && password != "") {
                         
-                        print("\nUsername-" + username + " Password-" + password);
+                        Logger.Instance.AddLog(msg: "\nUsername-" + username + " Password-" + password);
                         var emp = EmployeeService.Instance.CheckEmployeeAuth(username: username, password: password)
                         if(emp != nil) {
                             let employeeId = emp?.Id ?? 0;
 
-                            print("\nAuthentication Successful :: Employee Name-" + (emp!.Name));
+                            Logger.Instance.AddLog(msg: "\nAuthentication Successful :: Employee Name-" + (emp!.Name));
                             socket.write(data: ConnectionStrings.AUTHENTICATED.data(using: .utf8)!, timeOut: 1.0, tag: PKT_CODE.PKT_AUTH)
                             let detailStr:String = ConnectionStrings.EMP_DETAILS + String(employeeId) + ":" + (emp!.Name) + ":";
                             socket.write(data: detailStr.data(using: .utf8)!, timeOut: 1.0, tag: PKT_CODE.PKT_DETAIL);
@@ -243,13 +243,13 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
                         }
                         else
                         {
-                            print("\nAuthentication Failed");
+                            Logger.Instance.AddLog(msg: "\nAuthentication Failed");
                             socket.write(data: ConnectionStrings.NOT_AUTHENTICATED.data(using: .utf8)!, timeOut: 1.0, tag: PKT_CODE.PKT_NOT_AUTH)
                         }
                     }
                     else
                     {
-                        print("\nAuthentication Failed");
+                        Logger.Instance.AddLog(msg:"\nAuthentication Failed");
                         socket.write(data: ConnectionStrings.NOT_AUTHENTICATED.data(using: .utf8)!, timeOut: 1.0, tag: PKT_CODE.PKT_NOT_AUTH)
                     }
                 }
@@ -265,7 +265,7 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
                         let colonSplit = sub.split(separator: ":");
                         let id = Int(colonSplit[1]) ?? 0;
                         let val = colonSplit[0] as? String ?? ""
-                        print("Accept Call :: Employee ID-" + String(id) + " :: " + val);
+                        Logger.Instance.AddLog(msg: "Accept Call :: Employee ID-" + String(id) + " :: " + val);
                         CallService.Instance.ReceiveCallAcceptRespond(employeeId: id, uniqueId: val)
                     }
                 }
@@ -281,7 +281,7 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
                         let colonSplit = sub.split(separator: ":");
                         let id = Int(colonSplit[1]) ?? 0;
                         let val = colonSplit[0] as? String ?? ""
-                        print("Cancel Call :: Employee ID-" + String(id) + " :: " + val);
+                        Logger.Instance.AddLog(msg: "Cancel Call :: Employee ID-" + String(id) + " :: " + val);
                         CallService.Instance.ReceiveCallCancelRespond(employeeId: id, uniqueId: val)
                     }
                 }
@@ -290,7 +290,7 @@ class MobileTCPServer: SwiftAsyncSocketDelegate  {
                 let index: Int = dataStr.distance(from: dataStr.startIndex, to: range.lowerBound);
                 
                 if(index >= 0) {
-                    print("Ping.. " + (socket.localAddress as? String ?? ""));
+                    Logger.Instance.AddLog(msg: "Ping.. " + (socket.localAddress as? String ?? ""));
 
                 }
             }

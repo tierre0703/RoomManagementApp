@@ -17,13 +17,14 @@ class RoomService {
         let uniqueId = UUID().uuidString
         let list = RoomData.Instance.GetAllRooms()
         
-        print("\n-------------------------------------------");
-        print("\nInitializing Rooms");
+        Logger.Instance.AddLog(msg:"\n-------------------------------------------");
+        Logger.Instance.AddLog(msg: "\nInitializing Rooms");
+        
         for item in list {
-            print("\n" + item.Number);
+            Logger.Instance.AddLog(msg: ("\n" + item.Number));
             RoomFactory.Instance.TryAdd(Id: item.Id!, room: item);
         }
-        print("\n-------------------------------------------");
+        Logger.Instance.AddLog(msg: "\n-------------------------------------------");
     }
     
     

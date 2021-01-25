@@ -76,7 +76,7 @@ class EmailReportSchedule {
                     * PDF Create
          */
         //create pdf
-        print("\nEmailReportSchedule->createReport()");
+        Logger.Instance.AddLog(msg: "\nEmailReportSchedule->createReport()");
         
         //sendAsync
         EmailNotification.Instance.SendAsync(subject: pdfTitle, body: ""	)

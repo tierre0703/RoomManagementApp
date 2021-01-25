@@ -40,10 +40,10 @@ class MobileAppStatusUC: NSViewController {
         var connection = true;
         
         if connection == true {
-            print("\nConnecting to Service")
+            Logger.Instance.AddLog(msg: "\nConnecting to Service")
             //var list = NamedPipeConnector.Contract.GetMobileAppStatus()
             //MobileAppStatusFactory.Instance.UpdateList(list)
-            print("\nConnection Established with Service")
+            Logger.Instance.AddLog(msg: "\nConnection Established with Service")
         }
         else
         {

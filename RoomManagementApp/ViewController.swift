@@ -80,6 +80,12 @@ class ViewController: NSViewController {
         clearView()
         btnUserManagement.state = NSButton.StateValue.on;
         UserMgntView.isHidden = false;
+        
+        
+    }
+    
+    override func viewWillAppear() {
+        self.view.window?.standardWindowButton(NSWindow.ButtonType.closeButton)?.isEnabled = false
     }
 
     override var representedObject: Any? {
@@ -143,7 +149,7 @@ class ViewController: NSViewController {
             break;
 
         default:
-            print("\n SelectTabButton Error");
+            Logger.Instance.AddLog(msg: "\n SelectTabButton Error");
         }
         
     }

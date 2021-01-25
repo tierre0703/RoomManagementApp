@@ -38,7 +38,7 @@ class EmployeeMgntUC: NSViewController{
                 break
                 
             default:
-                print("alert button handler none")
+                Logger.Instance.AddLog(msg: "alert button handler none")
             }
 
         }

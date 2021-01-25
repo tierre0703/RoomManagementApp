@@ -16,13 +16,13 @@ class EmailService {
         let list = EmailData.Instance.GetAllEmails()
         
         //retrieve mail from DB
-        print("\n--------------------------");
-        print("\nInitializing Emails");
+        Logger.Instance.AddLog(msg: "\n--------------------------");
+        Logger.Instance.AddLog(msg: "\nInitializing Emails");
         for item in list! {
-            print("\n" + item.EmailAdress);
+            Logger.Instance.AddLog(msg: "\n" + item.EmailAdress);
             EmailFactory.Instance.TryAdd(Id: Int64(item.Id), email: item)
         }
     
-        print("\n--------------------------");
+        Logger.Instance.AddLog(msg: "\n--------------------------");
     }
 }

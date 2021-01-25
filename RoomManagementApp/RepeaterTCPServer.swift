@@ -31,19 +31,19 @@ class RepeaterTCPServer: SwiftAsyncSocketDelegate {
     
     
     func Initialize() {
-        print("\n------------------------------------");
-        print("\nInitializing Repeater TCP Server on Port 9999");
+        Logger.Instance.AddLog(msg: "\n------------------------------------");
+        Logger.Instance.AddLog(msg: "\nInitializing Repeater TCP Server on Port 9999");
         
         do {
             canAccept = ((try server?.accept(port: port)) != nil)
             canAccept = true;
         }catch {
-            print ("\(error)");
+            Logger.Instance.AddLog(msg:"\(error)");
         }
         
         
-        print("\nRepeater TCP Server Started");
-        print("\n------------------------------------");
+        Logger.Instance.AddLog(msg: "\nRepeater TCP Server Started");
+        Logger.Instance.AddLog(msg: "\n------------------------------------");
     }
     
     init() {
@@ -76,7 +76,7 @@ class RepeaterTCPServer: SwiftAsyncSocketDelegate {
         
         let dataStr = data as? String ?? "";
         
-        print("/nRECEIVED ::" + dataStr);
+        Logger.Instance.AddLog(msg: "/nRECEIVED ::" + dataStr);
         socket.write(data: "ACK".data(using: .utf8)!, timeOut: 1, tag: PKT_CODE.PKT_ACK)
         
         let keyToken = "H_SHAKE:";
@@ -132,7 +132,7 @@ class RepeaterTCPServer: SwiftAsyncSocketDelegate {
                let roomIds = str_roomIds.split(separator: ":");
                 var room = RoomFactory.Instance.GetByUniqueId(name: (roomIds[0] as? String ?? ""))
                 if(room == nil) {
-                    print("\nRoom Null");
+                    Logger.Instance.AddLog(msg: "\nRoom Null");
                     return;
                 }
                 let uniqueId = UUID().uuidString
@@ -173,7 +173,7 @@ class RepeaterTCPServer: SwiftAsyncSocketDelegate {
                 }
                 
                 if (connected == false) {
-                    print("\nRepeater Disconnected - ", item.key);
+                    Logger.Instance.AddLog(msg: "\nRepeater Disconnected - " +  item.key);
                     Connections.removeValue(forKey: item.key);
                     let date = Date();
                     let dateFormat = DateFormatter()
@@ -207,7 +207,7 @@ class RepeaterTCPServer: SwiftAsyncSocketDelegate {
                 
             } catch {
                 
-                print("\nTimedEvent", error);
+                Logger.Instance.AddLog(msg:"\nTimedEvent", error: error);
                 
             }
         }
@@ -230,7 +230,7 @@ class RepeaterTCPServer: SwiftAsyncSocketDelegate {
             let cur_time = formmatter.string(from: Date());
             lastEmailSentTimes.removeValue(forKey: repeater);
             
-            print("\nRepeater Connected -" + repeater + " at " + last_time);
+            Logger.Instance.AddLog(msg: "\nRepeater Connected -" + repeater + " at " + last_time);
             
             EmailNotification.Instance.SendAsync(subject: "Repeater Connected", body: "A Repeater " + repeater + " Connected at " + last_time + "\n" + cur_time);
           

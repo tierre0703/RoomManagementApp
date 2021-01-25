@@ -51,7 +51,7 @@ class EmailMgntUC: NSViewController {
                 break
                 
             default:
-                print("alert button handler none")
+                Logger.Instance.AddLog(msg: "alert button handler none")
             }
 
         }
@@ -124,7 +124,7 @@ class EmailMgntUC: NSViewController {
             }
         }
         catch{
-            print("\n EmailMgntUC->loadData() error", error);
+            Logger.Instance.AddLog(msg: "\n EmailMgntUC->loadData() error", error: error);
         }
         
     }

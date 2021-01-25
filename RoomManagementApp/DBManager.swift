@@ -27,7 +27,7 @@ class DBManager
                 do{
                     try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true, attributes: nil)
                 }catch{
-                    print("Directory Creation failed", error);
+                    Logger.Instance.AddLog(msg: "Directory Creation failed", error: error);
                     return nil;
                 }
             }
@@ -189,7 +189,7 @@ class DBManager
 
         }
         catch {
-            print("procDeleteCall Failed", error);
+            Logger.Instance.AddLog(msg: "procDeleteCall Failed", error: error);
         }
     }
     
@@ -201,7 +201,7 @@ class DBManager
         do {
             try _conn?.run(condition.delete())
         } catch {
-            print("\nprocDeleteCall Failed", error)
+            Logger.Instance.AddLog(msg: "\nprocDeleteCall Failed", error: error)
         }
     }
     
@@ -245,7 +245,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocGetEmailList", error)
+            Logger.Instance.AddLog(msg: "\nprocGetEmailList", error: error)
         }
         return nil;
     }
@@ -265,7 +265,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocInsertEmail Failed", error)
+            Logger.Instance.AddLog(msg: "\nprocInsertEmail Failed", error: error)
         }
     }
     
@@ -279,7 +279,7 @@ class DBManager
             try stmt?.run(_email, _id)
         }
         catch{
-            print("\nprocUpdateEmail Failed", error)
+            Logger.Instance.AddLog(msg: "\nprocUpdateEmail Failed", error: error)
         }
     }
     
@@ -297,7 +297,7 @@ class DBManager
 
         }
         catch {
-            print("procDeleteEmail Failed", error);
+            Logger.Instance.AddLog(msg: "procDeleteEmail Failed", error: error);
         }
     }
     
@@ -321,7 +321,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocUpdateCall Failed", error)
+            Logger.Instance.AddLog(msg: "\nprocUpdateCall Failed", error: error)
         }
     }
     
@@ -339,7 +339,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocInsertCall", error)
+            Logger.Instance.AddLog(msg: "\nprocInsertCall", error: error)
         }
     }
     
@@ -357,7 +357,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocGetRoomList Failed", error);
+            Logger.Instance.AddLog(msg: "\nprocGetRoomList Failed", error: error);
         }
         
         return nil;
@@ -376,7 +376,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocInsertRoom", error);
+            Logger.Instance.AddLog(msg: "\nprocInsertRoom", error: error);
             
         }
     }
@@ -392,7 +392,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocUpdateRoom", error)
+            Logger.Instance.AddLog(msg: "\nprocUpdateRoom", error: error)
         }
     }
     
@@ -408,7 +408,7 @@ class DBManager
 
         }
         catch {
-            print("procDeleteRoom Failed", error);
+            Logger.Instance.AddLog(msg: "procDeleteRoom Failed", error: error);
         }
     }
     
@@ -429,7 +429,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocGetRecentUnacceptedCall Failed", error);
+            Logger.Instance.AddLog(msg: "\nprocGetRecentUnacceptedCall Failed", error: error);
             
         }
         
@@ -448,7 +448,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocGetEmplyeeUCList Failed", error)
+            Logger.Instance.AddLog(msg: "\nprocGetEmplyeeUCList Failed", error: error)
         }
         
         return nil;
@@ -467,7 +467,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocInsertEmployee", error);
+            Logger.Instance.AddLog(msg: "\nprocInsertEmployee", error: error);
             
         }
     }
@@ -483,7 +483,7 @@ class DBManager
         }
         catch
         {
-            print("\nprocUpdateEmployee", error)
+            Logger.Instance.AddLog(msg: "\nprocUpdateEmployee", error: error)
         }
         
     }
@@ -501,7 +501,7 @@ class DBManager
 
         }
         catch {
-            print("procDeleteEmployee Failed", error);
+            Logger.Instance.AddLog(msg: "procDeleteEmployee Failed", error: error);
         }
     }
 }
