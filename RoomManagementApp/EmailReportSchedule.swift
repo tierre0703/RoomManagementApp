@@ -10,22 +10,23 @@ import Cocoa
 import PDFKit
 
 class EmailReportSchedule {
-    static var timer:Timer?;
-    static var lastDateTime:Date?;
-    static var sent:Bool = false;
+    static var Instance = EmailReportSchedule()
+    var timer:Timer?;
+    var lastDateTime:Date?;
+    var sent:Bool = false;
     
     
-    static func Start() {
+    func Start() {
         timer = Timer.scheduledTimer(timeInterval: 20.0, target:self, selector: #selector(OnTimedEvent), userInfo: nil, repeats: true)
     }
     
-    static func Stop() {
+    func Stop() {
         guard timer != nil else { return; }
         timer?.invalidate()
         timer = nil;
     }
     
-    static func _timerEvent() {
+    func _timerEvent() {
         if lastDateTime == nil {
             sent = false;
         }
@@ -53,14 +54,14 @@ class EmailReportSchedule {
     }
     
     
-    static func createReport() {
+    func createReport() {
         let pageWidth = 8.5 * 72.0
         let pageHeight = 11 * 72.0
         let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight );
         
         let date = Date();
         let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yyyy-MM-d"
+        dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let creationTime = dateFormat.string(from: date)
         
         
@@ -83,7 +84,7 @@ class EmailReportSchedule {
     
     @objc func OnTimedEvent()
     {
-        EmailReportSchedule._timerEvent()
+        _timerEvent()
     }
     
     

@@ -11,7 +11,7 @@ import Cocoa
 class EmailFactory {
     
     static var Instance = EmailFactory();
-    var Cache:[Int64:String] = [:]
+    var Cache:[Int64:EmailStruct] = [:]
     
     func Init() {
         _ = DBManager.getCon()
@@ -25,13 +25,11 @@ class EmailFactory {
             if(email == "") {
                 continue;
             }
-            
-            Cache[Id] = email;
-            
+            Cache[Id] = EmailStruct(Id: Int(Id), EmailAdress: email);
         }
         
     }
-    func TryAdd(Id: Int64, email: String) {
+    func TryAdd(Id: Int64, email: EmailStruct) {
         
         Cache[Id] = email;
     }
@@ -40,7 +38,7 @@ class EmailFactory {
         Cache.removeValue(forKey: Id)
     }
     
-    func GetAll()->[Int64:String] {
+    func GetAll()->[Int64:EmailStruct] {
         return Cache;
     }
     

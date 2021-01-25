@@ -193,6 +193,18 @@ class DBManager
         }
     }
     
+    static func procDeleteCall(_UniqueId:String){
+        
+        let tblCall = Table("Call")
+        let UniqueId = Expression<String?>("UniqueId")
+        let condition = tblCall.filter(UniqueId == _UniqueId)
+        do {
+            try _conn?.run(condition.delete())
+        } catch {
+            print("\nprocDeleteCall Failed", error)
+        }
+    }
+    
     static func deleteReader()
     {
         

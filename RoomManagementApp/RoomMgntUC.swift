@@ -117,10 +117,10 @@ class RoomMgntUC: NSViewController{
             //let stmt = DBManager.procGetRoomList()!;
             
             for row in stmt {
-                let p_id = row[0] as! Int64
-                let Id = row[1] as! Int64
-                let UniqueId = row[2] as! String
-                let Number = row[3] as! String
+                let p_id = row[0] as? Int64 ?? 0
+                let Id = row[1] as? Int64 ?? 0
+                let UniqueId = row[2] as? String ?? ""
+                let Number = row[3] as? String ?? ""
                 
                 RoomList.append(Room(p_id: p_id, Id: Id, UniqueId: UniqueId, Number: Number));
             }

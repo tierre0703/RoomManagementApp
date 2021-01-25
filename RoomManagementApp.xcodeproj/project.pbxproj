@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930B9FB725B54AFE007C8C3A /* RoomFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B9FB625B54AFE007C8C3A /* RoomFactory.swift */; };
+		930B9FBD25B54C03007C8C3A /* CallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B9FBC25B54C03007C8C3A /* CallService.swift */; };
+		930B9FC125B5E884007C8C3A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B9FC025B5E884007C8C3A /* Model.swift */; };
+		930B9FCE25B60AE6007C8C3A /* CallFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B9FCD25B60AE6007C8C3A /* CallFactory.swift */; };
 		931469E925AEF356004E9952 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = 931469E825AEF356004E9952 /* SwiftSMTP */; };
 		931469EB25AEF377004E9952 /* EmailNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469EA25AEF377004E9952 /* EmailNotification.swift */; };
 		931469ED25AEF8E5004E9952 /* EmailConfigurationUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931469EC25AEF8E5004E9952 /* EmailConfigurationUC.swift */; };
@@ -27,22 +31,90 @@
 		9368769B25AD8E4F002E77ED /* RepeaterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769A25AD8E4F002E77ED /* RepeaterStatus.swift */; };
 		9368769D25AD8F2A002E77ED /* RepeaterStatusFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368769C25AD8F2A002E77ED /* RepeaterStatusFactory.swift */; };
 		936876A225AD969D002E77ED /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936876A125AD969D002E77ED /* ServerManager.swift */; };
-		936876BF25AE971D002E77ED /* RepeaterTCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936876BE25AE971D002E77ED /* RepeaterTCPServer.swift */; };
 		937EE3882594E19F00EFB66B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937EE3872594E19F00EFB66B /* AppDelegate.swift */; };
 		937EE38A2594E19F00EFB66B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937EE3892594E19F00EFB66B /* ViewController.swift */; };
 		937EE38D2594E19F00EFB66B /* RoomManagementApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 937EE38B2594E19F00EFB66B /* RoomManagementApp.xcdatamodeld */; };
 		937EE38F2594E1A500EFB66B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937EE38E2594E1A500EFB66B /* Assets.xcassets */; };
 		937EE3922594E1A500EFB66B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937EE3902594E1A500EFB66B /* Main.storyboard */; };
+		93BB04C525B6AE6E00FDC6AB /* ConnectionStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB04C425B6AE6E00FDC6AB /* ConnectionStrings.swift */; };
+		93BB04CD25B6C08C00FDC6AB /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB04CC25B6C08C00FDC6AB /* Queue.swift */; };
+		93BB04CF25B6CC2E00FDC6AB /* PacketCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB04CE25B6CC2E00FDC6AB /* PacketCodes.swift */; };
+		93BB050925B6E72300FDC6AB /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB050825B6E72300FDC6AB /* EmployeeService.swift */; };
+		93BB051125B7196E00FDC6AB /* ExternalClientTCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB050F25B7196E00FDC6AB /* ExternalClientTCPServer.swift */; };
+		93BB051225B7196E00FDC6AB /* MobileTCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB051025B7196E00FDC6AB /* MobileTCPServer.swift */; };
+		93BB051825B719B900FDC6AB /* EmployeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB051425B719B800FDC6AB /* EmployeeData.swift */; };
+		93BB051925B719B900FDC6AB /* CallData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB051525B719B800FDC6AB /* CallData.swift */; };
+		93BB051A25B719B900FDC6AB /* EmailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB051625B719B800FDC6AB /* EmailData.swift */; };
+		93BB051B25B719B900FDC6AB /* RoomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB051725B719B800FDC6AB /* RoomData.swift */; };
+		93BB051D25B71A3C00FDC6AB /* RepeaterTCPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB051C25B71A3C00FDC6AB /* RepeaterTCPServer.swift */; };
+		93BB051F25B7338B00FDC6AB /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB051E25B7338B00FDC6AB /* RoomService.swift */; };
+		93BB052125B734CE00FDC6AB /* ServiceInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB052025B734CE00FDC6AB /* ServiceInitializer.swift */; };
+		93BB052625B868DF00FDC6AB /* RoomServiceMgntService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB052525B868DF00FDC6AB /* RoomServiceMgntService.swift */; };
+		93BB056725BAEF7B00FDC6AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB056625BAEF7B00FDC6AB /* AppDelegate.swift */; };
+		93BB056C25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93BB056A25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodeld */; };
+		93BB056E25BAEF7D00FDC6AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BB056D25BAEF7D00FDC6AB /* Assets.xcassets */; };
+		93BB057A25BAF11A00FDC6AB /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 93BB056425BAEF7B00FDC6AB /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93BB057D25BAF13C00FDC6AB /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93BB057C25BAF13C00FDC6AB /* ServiceManagement.framework */; };
+		93BB057E25BAF16500FDC6AB /* SwiftAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FF9D9725B17B3E009FED26 /* SwiftAsyncSocket.framework */; };
+		93BB057F25BAF16500FDC6AB /* SwiftAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93FF9D9725B17B3E009FED26 /* SwiftAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93FBEE0625B0DB290095F8B7 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 93FBEE0525B0DB290095F8B7 /* SQLite */; };
+		93FF9D9F25B17DAC009FED26 /* SimplePushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FF9D9E25B17DAC009FED26 /* SimplePushKit.framework */; };
+		93FF9DA025B17DAC009FED26 /* SimplePushKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93FF9D9E25B17DAC009FED26 /* SimplePushKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		93FF9DA325B1ABC2009FED26 /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF9DA225B1ABC2009FED26 /* Contract.swift */; };
+		93FF9DA725B1C8CF009FED26 /* EmployeeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF9DA625B1C8CF009FED26 /* EmployeeFactory.swift */; };
+		93FF9DA925B1DFAB009FED26 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FF9DA825B1DFAB009FED26 /* Callback.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		93FF9D9425B17B3E009FED26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93FF9D8D25B17B3E009FED26 /* SwiftAsyncSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02C6352921E60D3F0078257D;
+			remoteInfo = "SwiftAsyncSocket iOS";
+		};
+		93FF9D9625B17B3E009FED26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93FF9D8D25B17B3E009FED26 /* SwiftAsyncSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02C635A121E612230078257D;
+			remoteInfo = "SwiftAsyncSocket MacOS";
+		};
+		93FF9D9825B17B3E009FED26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93FF9D8D25B17B3E009FED26 /* SwiftAsyncSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02C635C121E613240078257D;
+			remoteInfo = "SwiftAsyncSocketTests iOS";
+		};
+		93FF9D9A25B17B3E009FED26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93FF9D8D25B17B3E009FED26 /* SwiftAsyncSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02C635D021E613A50078257D;
+			remoteInfo = "SwiftAsyncSocketTests MacOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		9335A25D25B1354500257959 /* Embed Frameworks */ = {
+		93BB057925BAF0F500FDC6AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				93BB057A25BAF11A00FDC6AB /* LauncherApplication.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93FF9DA125B17DAC009FED26 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				93BB057F25BAF16500FDC6AB /* SwiftAsyncSocket.framework in Embed Frameworks */,
+				93FF9DA025B17DAC009FED26 /* SimplePushKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +122,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		930B9FB625B54AFE007C8C3A /* RoomFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFactory.swift; sourceTree = "<group>"; };
+		930B9FBC25B54C03007C8C3A /* CallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallService.swift; sourceTree = "<group>"; };
+		930B9FC025B5E884007C8C3A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		930B9FCD25B60AE6007C8C3A /* CallFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallFactory.swift; sourceTree = "<group>"; };
 		931469DC25AEF219004E9952 /* Swift-SMTP-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Swift-SMTP-master"; path = "../packages/Swift-SMTP-master"; sourceTree = "<group>"; };
 		931469EA25AEF377004E9952 /* EmailNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailNotification.swift; sourceTree = "<group>"; };
 		931469EC25AEF8E5004E9952 /* EmailConfigurationUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailConfigurationUC.swift; sourceTree = "<group>"; };
@@ -71,7 +147,6 @@
 		9368769A25AD8E4F002E77ED /* RepeaterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterStatus.swift; sourceTree = "<group>"; };
 		9368769C25AD8F2A002E77ED /* RepeaterStatusFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterStatusFactory.swift; sourceTree = "<group>"; };
 		936876A125AD969D002E77ED /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
-		936876BE25AE971D002E77ED /* RepeaterTCPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeaterTCPServer.swift; sourceTree = "<group>"; };
 		937EE3842594E19F00EFB66B /* RoomManagementApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoomManagementApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		937EE3872594E19F00EFB66B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		937EE3892594E19F00EFB66B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,8 +155,34 @@
 		937EE3912594E1A500EFB66B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		937EE3932594E1A500EFB66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		937EE3942594E1A500EFB66B /* RoomManagementApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoomManagementApp.entitlements; sourceTree = "<group>"; };
+		93BB04C425B6AE6E00FDC6AB /* ConnectionStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStrings.swift; sourceTree = "<group>"; };
+		93BB04CC25B6C08C00FDC6AB /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		93BB04CE25B6CC2E00FDC6AB /* PacketCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketCodes.swift; sourceTree = "<group>"; };
+		93BB050825B6E72300FDC6AB /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
+		93BB050F25B7196E00FDC6AB /* ExternalClientTCPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternalClientTCPServer.swift; sourceTree = "<group>"; };
+		93BB051025B7196E00FDC6AB /* MobileTCPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileTCPServer.swift; sourceTree = "<group>"; };
+		93BB051425B719B800FDC6AB /* EmployeeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeData.swift; sourceTree = "<group>"; };
+		93BB051525B719B800FDC6AB /* CallData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallData.swift; sourceTree = "<group>"; };
+		93BB051625B719B800FDC6AB /* EmailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailData.swift; sourceTree = "<group>"; };
+		93BB051725B719B800FDC6AB /* RoomData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomData.swift; sourceTree = "<group>"; };
+		93BB051C25B71A3C00FDC6AB /* RepeaterTCPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeaterTCPServer.swift; sourceTree = "<group>"; };
+		93BB051E25B7338B00FDC6AB /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
+		93BB052025B734CE00FDC6AB /* ServiceInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInitializer.swift; sourceTree = "<group>"; };
+		93BB052525B868DF00FDC6AB /* RoomServiceMgntService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomServiceMgntService.swift; sourceTree = "<group>"; };
+		93BB054C25BAE4CC00FDC6AB /* LaunchAtLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LaunchAtLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BB056425BAEF7B00FDC6AB /* LauncherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LauncherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BB056625BAEF7B00FDC6AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		93BB056B25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LauncherApplication.xcdatamodel; sourceTree = "<group>"; };
+		93BB056D25BAEF7D00FDC6AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93BB057225BAEF7D00FDC6AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BB057325BAEF7D00FDC6AB /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
+		93BB057C25BAF13C00FDC6AB /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		93FBEE0425B0DB180095F8B7 /* SQLite.swift-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "SQLite.swift-master"; path = "../packages/SQLite.swift-master"; sourceTree = "<group>"; };
-		93FBEE0925B130830095F8B7 /* SwiftSocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93FF9D8D25B17B3E009FED26 /* SwiftAsyncSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftAsyncSocket.xcodeproj; path = "../packages/SwiftAsnycSocket-master/SwiftAsyncSocket.xcodeproj"; sourceTree = "<group>"; };
+		93FF9D9E25B17DAC009FED26 /* SimplePushKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SimplePushKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93FF9DA225B1ABC2009FED26 /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
+		93FF9DA625B1C8CF009FED26 /* EmployeeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeFactory.swift; sourceTree = "<group>"; };
+		93FF9DA825B1DFAB009FED26 /* Callback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,16 +192,52 @@
 			files = (
 				93FBEE0625B0DB290095F8B7 /* SQLite in Frameworks */,
 				931469E925AEF356004E9952 /* SwiftSMTP in Frameworks */,
+				93BB057D25BAF13C00FDC6AB /* ServiceManagement.framework in Frameworks */,
+				93BB057E25BAF16500FDC6AB /* SwiftAsyncSocket.framework in Frameworks */,
+				93FF9D9F25B17DAC009FED26 /* SimplePushKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93BB056125BAEF7B00FDC6AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930B9FC325B5FA8C007C8C3A /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				931469F225AF235A004E9952 /* EmailFactory.swift */,
+				93FF9DA625B1C8CF009FED26 /* EmployeeFactory.swift */,
+				930B9FB625B54AFE007C8C3A /* RoomFactory.swift */,
+				930B9FCD25B60AE6007C8C3A /* CallFactory.swift */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		930B9FCF25B60D15007C8C3A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				931469F025AF22C0004E9952 /* EmailService.swift */,
+				930B9FBC25B54C03007C8C3A /* CallService.swift */,
+				93BB050825B6E72300FDC6AB /* EmployeeService.swift */,
+				93BB051E25B7338B00FDC6AB /* RoomService.swift */,
+				93BB052025B734CE00FDC6AB /* ServiceInitializer.swift */,
+				93BB052525B868DF00FDC6AB /* RoomServiceMgntService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		9363020E25A53D020063C6AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				93FBEE0925B130830095F8B7 /* SwiftSocket.framework */,
+				93BB057C25BAF13C00FDC6AB /* ServiceManagement.framework */,
+				93BB054C25BAE4CC00FDC6AB /* LaunchAtLogin.framework */,
+				93FF9D9E25B17DAC009FED26 /* SimplePushKit.framework */,
 				93FBEE0425B0DB180095F8B7 /* SQLite.swift-master */,
 				931469DC25AEF219004E9952 /* Swift-SMTP-master */,
 			);
@@ -110,7 +247,9 @@
 		937EE37B2594E19F00EFB66B = {
 			isa = PBXGroup;
 			children = (
+				93FF9D8D25B17B3E009FED26 /* SwiftAsyncSocket.xcodeproj */,
 				937EE3862594E19F00EFB66B /* RoomManagementApp */,
+				93BB056525BAEF7B00FDC6AB /* LauncherApplication */,
 				937EE3852594E19F00EFB66B /* Products */,
 				9363020E25A53D020063C6AB /* Frameworks */,
 			);
@@ -120,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				937EE3842594E19F00EFB66B /* RoomManagementApp.app */,
+				93BB056425BAEF7B00FDC6AB /* LauncherApplication.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,7 +267,13 @@
 		937EE3862594E19F00EFB66B /* RoomManagementApp */ = {
 			isa = PBXGroup;
 			children = (
+				93BB052725B86A5D00FDC6AB /* Email */,
+				93BB051325B719AB00FDC6AB /* DataAccess */,
+				93BB050E25B7191D00FDC6AB /* Server */,
+				930B9FCF25B60D15007C8C3A /* Service */,
+				930B9FC325B5FA8C007C8C3A /* Factory */,
 				9335A26825B136E000257959 /* RoomManagementAppDebug.entitlements */,
+				93BB04CC25B6C08C00FDC6AB /* Queue.swift */,
 				937EE3872594E19F00EFB66B /* AppDelegate.swift */,
 				937EE3892594E19F00EFB66B /* ViewController.swift */,
 				937EE38E2594E1A500EFB66B /* Assets.xcassets */,
@@ -148,15 +294,68 @@
 				9368769A25AD8E4F002E77ED /* RepeaterStatus.swift */,
 				9368769C25AD8F2A002E77ED /* RepeaterStatusFactory.swift */,
 				936876A125AD969D002E77ED /* ServerManager.swift */,
-				936876BE25AE971D002E77ED /* RepeaterTCPServer.swift */,
-				931469EA25AEF377004E9952 /* EmailNotification.swift */,
 				931469EC25AEF8E5004E9952 /* EmailConfigurationUC.swift */,
 				931469EE25AF0398004E9952 /* EmailSettings.swift */,
-				931469F025AF22C0004E9952 /* EmailService.swift */,
-				931469F225AF235A004E9952 /* EmailFactory.swift */,
-				931469F425AF2D4F004E9952 /* EmailReportSchedule.swift */,
+				93FF9DA225B1ABC2009FED26 /* Contract.swift */,
+				93FF9DA825B1DFAB009FED26 /* Callback.swift */,
+				930B9FC025B5E884007C8C3A /* Model.swift */,
+				93BB04C425B6AE6E00FDC6AB /* ConnectionStrings.swift */,
+				93BB04CE25B6CC2E00FDC6AB /* PacketCodes.swift */,
 			);
 			path = RoomManagementApp;
+			sourceTree = "<group>";
+		};
+		93BB050E25B7191D00FDC6AB /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				93BB051C25B71A3C00FDC6AB /* RepeaterTCPServer.swift */,
+				93BB050F25B7196E00FDC6AB /* ExternalClientTCPServer.swift */,
+				93BB051025B7196E00FDC6AB /* MobileTCPServer.swift */,
+			);
+			name = Server;
+			sourceTree = "<group>";
+		};
+		93BB051325B719AB00FDC6AB /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				93BB051525B719B800FDC6AB /* CallData.swift */,
+				93BB051625B719B800FDC6AB /* EmailData.swift */,
+				93BB051425B719B800FDC6AB /* EmployeeData.swift */,
+				93BB051725B719B800FDC6AB /* RoomData.swift */,
+			);
+			name = DataAccess;
+			sourceTree = "<group>";
+		};
+		93BB052725B86A5D00FDC6AB /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				931469EA25AEF377004E9952 /* EmailNotification.swift */,
+				931469F425AF2D4F004E9952 /* EmailReportSchedule.swift */,
+			);
+			name = Email;
+			sourceTree = "<group>";
+		};
+		93BB056525BAEF7B00FDC6AB /* LauncherApplication */ = {
+			isa = PBXGroup;
+			children = (
+				93BB056625BAEF7B00FDC6AB /* AppDelegate.swift */,
+				93BB056D25BAEF7D00FDC6AB /* Assets.xcassets */,
+				93BB057225BAEF7D00FDC6AB /* Info.plist */,
+				93BB057325BAEF7D00FDC6AB /* LauncherApplication.entitlements */,
+				93BB056A25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodeld */,
+			);
+			path = LauncherApplication;
+			sourceTree = "<group>";
+		};
+		93FF9D8E25B17B3E009FED26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93FF9D9525B17B3E009FED26 /* SwiftAsyncSocket.framework */,
+				93FF9D9725B17B3E009FED26 /* SwiftAsyncSocket.framework */,
+				93FF9D9925B17B3E009FED26 /* SwiftAsyncSocketTests iOS.xctest */,
+				93FF9D9B25B17B3E009FED26 /* SwiftAsyncSocketTests MacOS.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +368,8 @@
 				937EE3802594E19F00EFB66B /* Sources */,
 				937EE3812594E19F00EFB66B /* Frameworks */,
 				937EE3822594E19F00EFB66B /* Resources */,
-				9335A25D25B1354500257959 /* Embed Frameworks */,
+				93FF9DA125B17DAC009FED26 /* Embed Frameworks */,
+				93BB057925BAF0F500FDC6AB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -184,6 +384,23 @@
 			productReference = 937EE3842594E19F00EFB66B /* RoomManagementApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		93BB056325BAEF7B00FDC6AB /* LauncherApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93BB057425BAEF7D00FDC6AB /* Build configuration list for PBXNativeTarget "LauncherApplication" */;
+			buildPhases = (
+				93BB056025BAEF7B00FDC6AB /* Sources */,
+				93BB056125BAEF7B00FDC6AB /* Frameworks */,
+				93BB056225BAEF7B00FDC6AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LauncherApplication;
+			productName = LauncherApplication;
+			productReference = 93BB056425BAEF7B00FDC6AB /* LauncherApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -194,6 +411,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					937EE3832594E19F00EFB66B = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					93BB056325BAEF7B00FDC6AB = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -209,12 +429,50 @@
 			mainGroup = 937EE37B2594E19F00EFB66B;
 			productRefGroup = 937EE3852594E19F00EFB66B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 93FF9D8E25B17B3E009FED26 /* Products */;
+					ProjectRef = 93FF9D8D25B17B3E009FED26 /* SwiftAsyncSocket.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				937EE3832594E19F00EFB66B /* RoomManagementApp */,
+				93BB056325BAEF7B00FDC6AB /* LauncherApplication */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		93FF9D9525B17B3E009FED26 /* SwiftAsyncSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftAsyncSocket.framework;
+			remoteRef = 93FF9D9425B17B3E009FED26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93FF9D9725B17B3E009FED26 /* SwiftAsyncSocket.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftAsyncSocket.framework;
+			remoteRef = 93FF9D9625B17B3E009FED26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93FF9D9925B17B3E009FED26 /* SwiftAsyncSocketTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftAsyncSocketTests iOS.xctest";
+			remoteRef = 93FF9D9825B17B3E009FED26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93FF9D9B25B17B3E009FED26 /* SwiftAsyncSocketTests MacOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftAsyncSocketTests MacOS.xctest";
+			remoteRef = 93FF9D9A25B17B3E009FED26 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		937EE3822594E19F00EFB66B /* Resources */ = {
@@ -226,6 +484,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93BB056225BAEF7B00FDC6AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BB056E25BAEF7D00FDC6AB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -234,28 +500,57 @@
 			buildActionMask = 2147483647;
 			files = (
 				936876A225AD969D002E77ED /* ServerManager.swift in Sources */,
+				930B9FB725B54AFE007C8C3A /* RoomFactory.swift in Sources */,
+				93BB052625B868DF00FDC6AB /* RoomServiceMgntService.swift in Sources */,
 				9368769325AD6E1E002E77ED /* MobileAppStatusFactory.swift in Sources */,
+				93BB051B25B719B900FDC6AB /* RoomData.swift in Sources */,
+				93BB04CD25B6C08C00FDC6AB /* Queue.swift in Sources */,
+				93BB050925B6E72300FDC6AB /* EmployeeService.swift in Sources */,
 				9363021325A54C060063C6AB /* EmployeeMgntUC.swift in Sources */,
 				931469ED25AEF8E5004E9952 /* EmailConfigurationUC.swift in Sources */,
+				93FF9DA925B1DFAB009FED26 /* Callback.swift in Sources */,
+				93BB051125B7196E00FDC6AB /* ExternalClientTCPServer.swift in Sources */,
+				93BB04C525B6AE6E00FDC6AB /* ConnectionStrings.swift in Sources */,
 				931469EB25AEF377004E9952 /* EmailNotification.swift in Sources */,
 				931469F325AF235A004E9952 /* EmailFactory.swift in Sources */,
 				9363021525A5506B0063C6AB /* Employee.swift in Sources */,
+				93BB052125B734CE00FDC6AB /* ServiceInitializer.swift in Sources */,
 				9368769725AD7301002E77ED /* MobileAppStatusUC.swift in Sources */,
+				93BB04CF25B6CC2E00FDC6AB /* PacketCodes.swift in Sources */,
+				93BB051D25B71A3C00FDC6AB /* RepeaterTCPServer.swift in Sources */,
+				93BB051825B719B900FDC6AB /* EmployeeData.swift in Sources */,
 				9368769D25AD8F2A002E77ED /* RepeaterStatusFactory.swift in Sources */,
 				9368769925AD80F1002E77ED /* RepeaterStatusUC.swift in Sources */,
 				937EE38A2594E19F00EFB66B /* ViewController.swift in Sources */,
 				931469F525AF2D4F004E9952 /* EmailReportSchedule.swift in Sources */,
-				936876BF25AE971D002E77ED /* RepeaterTCPServer.swift in Sources */,
+				930B9FC125B5E884007C8C3A /* Model.swift in Sources */,
 				931469EF25AF0398004E9952 /* EmailSettings.swift in Sources */,
 				931469F125AF22C1004E9952 /* EmailService.swift in Sources */,
+				93FF9DA325B1ABC2009FED26 /* Contract.swift in Sources */,
 				9368768625AC2AF8002E77ED /* RoomMgntUC.swift in Sources */,
+				930B9FCE25B60AE6007C8C3A /* CallFactory.swift in Sources */,
 				9368769B25AD8E4F002E77ED /* RepeaterStatus.swift in Sources */,
 				9368769525AD6EA7002E77ED /* MobileAppStatus.swift in Sources */,
+				93BB051925B719B900FDC6AB /* CallData.swift in Sources */,
 				937EE3882594E19F00EFB66B /* AppDelegate.swift in Sources */,
+				93BB051A25B719B900FDC6AB /* EmailData.swift in Sources */,
 				9368768F25AC87DA002E77ED /* CallMgntUC.swift in Sources */,
+				930B9FBD25B54C03007C8C3A /* CallService.swift in Sources */,
 				9368769125AD591A002E77ED /* EmailMgntUC.swift in Sources */,
+				93BB051F25B7338B00FDC6AB /* RoomService.swift in Sources */,
 				937EE38D2594E19F00EFB66B /* RoomManagementApp.xcdatamodeld in Sources */,
+				93FF9DA725B1C8CF009FED26 /* EmployeeFactory.swift in Sources */,
 				936301EC25A535A00063C6AB /* DBManager.swift in Sources */,
+				93BB051225B7196E00FDC6AB /* MobileTCPServer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93BB056025BAEF7B00FDC6AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BB056C25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodeld in Sources */,
+				93BB056725BAEF7B00FDC6AB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +729,49 @@
 			};
 			name = Release;
 		};
+		93BB057525BAEF7D00FDC6AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azureavs.LauncherApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		93BB057625BAEF7D00FDC6AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TK8Q44Q82M;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.azureavs.LauncherApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +789,15 @@
 			buildConfigurations = (
 				937EE3982594E1A500EFB66B /* Debug */,
 				937EE3992594E1A500EFB66B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93BB057425BAEF7D00FDC6AB /* Build configuration list for PBXNativeTarget "LauncherApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93BB057525BAEF7D00FDC6AB /* Debug */,
+				93BB057625BAEF7D00FDC6AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -476,6 +823,16 @@
 			);
 			currentVersion = 937EE38C2594E19F00EFB66B /* RoomManagementApp.xcdatamodel */;
 			path = RoomManagementApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		93BB056A25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				93BB056B25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodel */,
+			);
+			currentVersion = 93BB056B25BAEF7B00FDC6AB /* LauncherApplication.xcdatamodel */;
+			path = LauncherApplication.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

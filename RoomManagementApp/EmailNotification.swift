@@ -29,7 +29,7 @@ class EmailNotification {
         var emails:[Mail.User] = [];
         for item in EmailFactory.Instance.GetAll() {
             let to_email = item.value;
-            emails.append(Mail.User(email: to_email))
+            emails.append(Mail.User(email: (to_email.EmailAdress)))
         }
         
         
@@ -59,7 +59,7 @@ class EmailNotification {
         var emails:[Mail.User] = [];
         for item in EmailFactory.Instance.GetAll() {
             let to_email = item.value;
-            emails.append(Mail.User(email: to_email))
+            emails.append(Mail.User(email: to_email.EmailAdress))
         }
         
         

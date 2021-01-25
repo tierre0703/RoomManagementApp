@@ -8,6 +8,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
    //MARK property
     @IBOutlet weak var btnEmailManagement: NSButton!
     @IBOutlet weak var btnRepeaterManagement: NSButton!

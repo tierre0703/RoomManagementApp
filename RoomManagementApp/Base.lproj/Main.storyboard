@@ -854,12 +854,6 @@
                         </subviews>
                         <accessibility description="MainWindow"/>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="layer?.backgroundColor">
-                            <color key="value" red="0.027450980390000001" green="0.28235294119999998" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="RoomMgntView" destination="lFh-Py-3Uz" id="aE9-Pl-06H"/>
                         <outlet property="UserMgntView" destination="JHV-rH-5Xe" id="upy-oi-3oK"/>

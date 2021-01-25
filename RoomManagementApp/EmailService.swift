@@ -10,10 +10,18 @@ import Cocoa
 
 class EmailService {
     
-    static func Initialize(){
+    static var Instance = EmailService();
+    
+    func Initialize(){
+        let list = EmailData.Instance.GetAllEmails()
+        
         //retrieve mail from DB
         print("\n--------------------------");
-        EmailFactory.Instance.Init();
+        print("\nInitializing Emails");
+        for item in list! {
+            print("\n" + item.EmailAdress);
+            EmailFactory.Instance.TryAdd(Id: Int64(item.Id), email: item)
+        }
     
         print("\n--------------------------");
     }

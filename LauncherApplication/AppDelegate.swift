@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  RoomManagementApp
+//  LauncherApplication
 //
-//  Created by Tierre on 12/24/20.
+//  Created by Tierre on 1/22/21.
 //
 
 import Cocoa
@@ -10,67 +10,42 @@ import ServiceManagement
 
 
 extension Notification.Name {
-    static let killLauncher = Notification.Name("killLauncher")
+    static let killLauncher = Notification.Name("KillLauncher");
 }
-
-
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var statusBarItem: NSStatusItem!
-    
-    func TrayMenu() {
-        let statusBar = NSStatusBar.system
-        statusBarItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-        //statusBarItem.button!.title = "RoomManagement"
-        let image = NSImage(named: NSImage.Name("logo"))
-        image?.isTemplate = true
-        statusBarItem.button!.image = image
-        let statusBarMenu = NSMenu(title: "RoomManagement")
-        statusBarItem.menu = statusBarMenu
-        
-        statusBarMenu.addItem(withTitle: "Show RoomManagementApp", action: #selector(AppDelegate.ShowApp), keyEquivalent: "")
-        
-        statusBarMenu.addItem(withTitle: "Close App", action: #selector(AppDelegate.CloseApp), keyEquivalent: "")
- 
+    @objc func terminate() {
+        NSApp.terminate(nil)
     }
-    
-    @objc func ShowApp() {
-        //let applications = NSWorkspace.shared.runningApplications
-        //for app in applications {
-        //    if app == NSWorkspace.shared.self {
-                NSApplication.shared.activate(ignoringOtherApps: true)
-        //    }
-        //}
-    }
-    
-    
-    @objc func CloseApp() {
-
-        
-    }
-    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        TrayMenu()
         
-        //Launcher part
-        let launcherAppId = "com.azureavs.LauncherApplication"
+        let mainAppIdentifer = "com.azureavs.RoomManagementApp"
         let runningApps = NSWorkspace.shared.runningApplications
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == mainAppIdentifer }.isEmpty
         
-        let isRunning = !runningApps.filter{ $0.bundleIdentifier == launcherAppId }.isEmpty
-        
-        SMLoginItemSetEnabled(launcherAppId as CFString, true)
-        if isRunning {
-            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
+        if !isRunning {
+            DistributedNotificationCenter.default().addObserver(self, selector: #selector(self.terminate), name: .killLauncher, object: mainAppIdentifer)
+            
+            let path = Bundle.main.bundlePath as NSString
+            var components = path.pathComponents
+            components.removeLast()
+            components.removeLast()
+            components.removeLast()
+            components.append("MacOS")
+            components.append("RoomManagementApp")
+            
+            let newPath = NSString.path(withComponents: components)
+            NSWorkspace.shared.launchApplication(newPath)
         }
-        //Launcher part end
-
+        else {
+            self.terminate()
+        }
         
-        RoomServiceMgntService.Instance.OnStart();
-
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -86,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "RoomManagementApp")
+        let container = NSPersistentContainer(name: "LauncherApplication")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
                 // Replace this implementation with code to handle the error appropriately.

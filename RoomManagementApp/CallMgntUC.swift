@@ -8,14 +8,27 @@
 import Foundation
 import Cocoa
 
-typealias Call = (
-    p_id: Int64?,
-    Id: Int64?,
-    AcceptedUser: String?,
-    Room: String?,
-    CallTime: String?,
-    AnswerTime: String?
-)
+
+class Call {
+    var p_id: Int64?;
+    var Id: Int64?;
+    var isAccepted:Int64?;
+    var AcceptedUser: String?;
+    var Room: String?;
+    var CallTime: String?;
+    var AnswerTime: String?;
+    
+    init(p_id: Int64, Id: Int64, isAccepted: Int64, AcceptedUser: String, Room: String, CallTime: String, AnswerTime: String) {
+        self.p_id = p_id
+        self.Id = Id;
+        self.isAccepted = isAccepted
+        self.AcceptedUser = AcceptedUser
+        self.Room = Room
+        self.CallTime = CallTime
+        self.AnswerTime = AnswerTime
+    }
+
+}
 
 class CallMgntUC:NSViewController{
     
@@ -115,14 +128,14 @@ class CallMgntUC:NSViewController{
             
             for row in rows! {
                 
-                let id_p = row[0] as? Int64
-                let ID = row[1] as? Int64
-                let AcceptedUser = row[2] as? String
-                let Room = row[3] as? String
-                let CallTime = row[4] as? String
-                let AnswerTime = row[5] as? String
-                
-                CallList.append(Call(p_id: id_p ?? 0, Id: ID ?? 0, AcceptedUser: AcceptedUser ?? "", Room: Room ?? "", CallTime: CallTime ?? "", AnswerTime: AnswerTime ?? ""))
+                let id_p = row[0] as? Int64 ?? 0
+                let ID = row[1] as? Int64 ?? 0
+                let AcceptedUser = row[2] as? String ?? ""
+                let Room = row[3] as? String ?? ""
+                let CallTime = row[4] as? String ?? ""
+                let AnswerTime = row[5] as? String ?? ""
+                let call = Call(p_id: id_p, Id: ID, isAccepted: Int64(1), AcceptedUser: AcceptedUser, Room: Room, CallTime: CallTime, AnswerTime: AnswerTime)
+                CallList.append(call)
             }
             
         }
