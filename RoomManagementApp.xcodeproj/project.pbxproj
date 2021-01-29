@@ -37,6 +37,12 @@
 		937EE38F2594E1A500EFB66B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 937EE38E2594E1A500EFB66B /* Assets.xcassets */; };
 		937EE3922594E1A500EFB66B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 937EE3902594E1A500EFB66B /* Main.storyboard */; };
 		939E0C3225BF16D800121114 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E0C3125BF16D800121114 /* Logger.swift */; };
+		939E0D2125BFB7BF00121114 /* SimplePushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FF9D9E25B17DAC009FED26 /* SimplePushKit.framework */; };
+		939E0D2325BFB7D800121114 /* PushServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E0D2225BFB7D800121114 /* PushServiceManager.swift */; };
+		939E0D2625BFB81C00121114 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E0D2525BFB81C00121114 /* Channel.swift */; };
+		939E0D2925BFB8C900121114 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E0D2825BFB8C900121114 /* Client.swift */; };
+		939E0D2C25BFB8FD00121114 /* Call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E0D2B25BFB8FD00121114 /* Call.swift */; };
+		939E0D2F25BFB92E00121114 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939E0D2E25BFB92E00121114 /* Router.swift */; };
 		93BB04C525B6AE6E00FDC6AB /* ConnectionStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB04C425B6AE6E00FDC6AB /* ConnectionStrings.swift */; };
 		93BB04CD25B6C08C00FDC6AB /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB04CC25B6C08C00FDC6AB /* Queue.swift */; };
 		93BB04CF25B6CC2E00FDC6AB /* PacketCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB04CE25B6CC2E00FDC6AB /* PacketCodes.swift */; };
@@ -157,6 +163,11 @@
 		937EE3932594E1A500EFB66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		937EE3942594E1A500EFB66B /* RoomManagementApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RoomManagementApp.entitlements; sourceTree = "<group>"; };
 		939E0C3125BF16D800121114 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		939E0D2225BFB7D800121114 /* PushServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushServiceManager.swift; sourceTree = "<group>"; };
+		939E0D2525BFB81C00121114 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		939E0D2825BFB8C900121114 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		939E0D2B25BFB8FD00121114 /* Call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Call.swift; sourceTree = "<group>"; };
+		939E0D2E25BFB92E00121114 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		93BB04C425B6AE6E00FDC6AB /* ConnectionStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStrings.swift; sourceTree = "<group>"; };
 		93BB04CC25B6C08C00FDC6AB /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		93BB04CE25B6CC2E00FDC6AB /* PacketCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketCodes.swift; sourceTree = "<group>"; };
@@ -197,6 +208,7 @@
 				93BB057D25BAF13C00FDC6AB /* ServiceManagement.framework in Frameworks */,
 				93BB057E25BAF16500FDC6AB /* SwiftAsyncSocket.framework in Frameworks */,
 				93FF9D9F25B17DAC009FED26 /* SimplePushKit.framework in Frameworks */,
+				939E0D2125BFB7BF00121114 /* SimplePushKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +281,7 @@
 		937EE3862594E19F00EFB66B /* RoomManagementApp */ = {
 			isa = PBXGroup;
 			children = (
+				939E0D1C25BFB79800121114 /* Push */,
 				93BB052725B86A5D00FDC6AB /* Email */,
 				93BB051325B719AB00FDC6AB /* DataAccess */,
 				93BB050E25B7191D00FDC6AB /* Server */,
@@ -306,6 +319,18 @@
 				939E0C3125BF16D800121114 /* Logger.swift */,
 			);
 			path = RoomManagementApp;
+			sourceTree = "<group>";
+		};
+		939E0D1C25BFB79800121114 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				939E0D2225BFB7D800121114 /* PushServiceManager.swift */,
+				939E0D2525BFB81C00121114 /* Channel.swift */,
+				939E0D2825BFB8C900121114 /* Client.swift */,
+				939E0D2B25BFB8FD00121114 /* Call.swift */,
+				939E0D2E25BFB92E00121114 /* Router.swift */,
+			);
+			name = Push;
 			sourceTree = "<group>";
 		};
 		93BB050E25B7191D00FDC6AB /* Server */ = {
@@ -503,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936876A225AD969D002E77ED /* ServerManager.swift in Sources */,
+				939E0D2C25BFB8FD00121114 /* Call.swift in Sources */,
 				930B9FB725B54AFE007C8C3A /* RoomFactory.swift in Sources */,
 				93BB052625B868DF00FDC6AB /* RoomServiceMgntService.swift in Sources */,
 				9368769325AD6E1E002E77ED /* MobileAppStatusFactory.swift in Sources */,
@@ -521,6 +547,7 @@
 				9368769725AD7301002E77ED /* MobileAppStatusUC.swift in Sources */,
 				93BB04CF25B6CC2E00FDC6AB /* PacketCodes.swift in Sources */,
 				93BB051D25B71A3C00FDC6AB /* RepeaterTCPServer.swift in Sources */,
+				939E0D2625BFB81C00121114 /* Channel.swift in Sources */,
 				93BB051825B719B900FDC6AB /* EmployeeData.swift in Sources */,
 				9368769D25AD8F2A002E77ED /* RepeaterStatusFactory.swift in Sources */,
 				9368769925AD80F1002E77ED /* RepeaterStatusUC.swift in Sources */,
@@ -528,6 +555,7 @@
 				939E0C3225BF16D800121114 /* Logger.swift in Sources */,
 				931469F525AF2D4F004E9952 /* EmailReportSchedule.swift in Sources */,
 				930B9FC125B5E884007C8C3A /* Model.swift in Sources */,
+				939E0D2325BFB7D800121114 /* PushServiceManager.swift in Sources */,
 				931469EF25AF0398004E9952 /* EmailSettings.swift in Sources */,
 				931469F125AF22C1004E9952 /* EmailService.swift in Sources */,
 				93FF9DA325B1ABC2009FED26 /* Contract.swift in Sources */,
@@ -537,9 +565,11 @@
 				9368769525AD6EA7002E77ED /* MobileAppStatus.swift in Sources */,
 				93BB051925B719B900FDC6AB /* CallData.swift in Sources */,
 				937EE3882594E19F00EFB66B /* AppDelegate.swift in Sources */,
+				939E0D2F25BFB92E00121114 /* Router.swift in Sources */,
 				93BB051A25B719B900FDC6AB /* EmailData.swift in Sources */,
 				9368768F25AC87DA002E77ED /* CallMgntUC.swift in Sources */,
 				930B9FBD25B54C03007C8C3A /* CallService.swift in Sources */,
+				939E0D2925BFB8C900121114 /* Client.swift in Sources */,
 				9368769125AD591A002E77ED /* EmailMgntUC.swift in Sources */,
 				93BB051F25B7338B00FDC6AB /* RoomService.swift in Sources */,
 				937EE38D2594E19F00EFB66B /* RoomManagementApp.xcdatamodeld in Sources */,

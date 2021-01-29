@@ -70,6 +70,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         
         RoomServiceMgntService.Instance.OnStart();
+        
+        PushServiceManager.Instance.Start()
 
     }
 
